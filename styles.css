@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    background: rgb(255,112,127);
+    background: linear-gradient(90deg, rgba(255,112,127,1) 0%, rgba(198,255,112,1) 50%, rgba(112,255,241,1) 100%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50px;
+}
+
+.animation {
+    cursor: pointer;
+}
+
+.over {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition-duration: 250ms; 
+}
+
+.over:hover {   
+    top: 45%;
+    left: 55%;
+}
+
+.over:hover .eye-left {
+    animation-name: clin;
+    animation-duration: 400ms;
+}
+
+.over:hover .eye-right {
+    animation-name: clin;
+    animation-duration: 400ms;
+}
+
+
+.under {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);    
+}
+
+.eye-left {
+    position: absolute;
+    top: 95px;
+    left: 246px;
+    z-index: 3;
+    width: 35px;
+    height: 108px;
+    background-color: #9146ff;
+}
+
+.eye-right {
+    position: absolute;
+    top: 95px;
+    left: 346px;
+    z-index: 3;    
+    width: 35px;
+    height: 108px;
+    background-color: #9146ff;
+}
+
+@keyframes clin {
+    0% {
+        transform: none;
+    }
+    25% {
+        transform: scaleY(0.3);
+    }
+    50% {
+        transform: scaleY(1);
+    }   
+    75% {
+        transform: scaleY(0.3);
+    }
+    100% {
+        transform: scaleY(1);
+    } 
+}
+
+
+
+
